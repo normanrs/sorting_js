@@ -23,11 +23,7 @@ function justSort(arrayIn) {
     let arrayOut = []
     while (arrayIn.length > 0) {
       arrayOut.push(Math.min(...arrayIn));
-      arrayIn = removeSmallest(arrayIn);
-    }
-    function removeSmallest(arr) {
-    var min = Math.min.apply(null, arr);
-    return arr.filter((e) => {return e != min});
+      arrayIn = arrayIn.filter((e) => {return e != (Math.min.apply(null, arrayIn))});
     }
   return arrayOut
   }
