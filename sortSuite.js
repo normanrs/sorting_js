@@ -17,4 +17,21 @@ function mergeSort(arrayIn) {
   }
 }
 
-module.exports = mergeSort
+function justSort(arrayIn) {
+  if (arrayIn.length < 2) { return(arrayIn) ;}
+  else if (Array.isArray(arrayIn)) {
+    let arrayOut = []
+    while (arrayIn.length > 0) {
+      arrayOut.push(Math.min(...arrayIn));
+      arrayIn = removeSmallest(arrayIn);
+    }
+    function removeSmallest(arr) {
+    var min = Math.min.apply(null, arr);
+    return arr.filter((e) => {return e != min});
+    }
+  return arrayOut
+  }
+}
+
+module.exports.mergeSort = mergeSort
+module.exports.justSort = justSort
