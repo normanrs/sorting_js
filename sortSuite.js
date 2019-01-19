@@ -18,8 +18,8 @@ function mergeSort(arrayIn) {
 }
 
 function justSort(arrayIn) {
-  if (arrayIn.length < 2) { return(arrayIn) ;}
-  else if (Array.isArray(arrayIn)) {
+  if (Array.isArray(arrayIn) === false) { return([]) ;}
+  else {
     let arrayOut = []
     while (arrayIn.length > 0) {
       arrayOut.push(Math.min(...arrayIn));
