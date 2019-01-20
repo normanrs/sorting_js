@@ -20,12 +20,12 @@ function mergeSort(arrayIn) {
 function justSort(arrayIn) {
   if (Array.isArray(arrayIn) === false) { return([]) ;}
   else {
-    let arrayOut = []
+    let sortedArray = []
     while (arrayIn.length > 0) {
-      arrayOut.push(Math.min(...arrayIn));
+      sortedArray.push(Math.min(...arrayIn));
       arrayIn = arrayIn.filter((e) => {return e != (Math.min.apply(null, arrayIn))});
     }
-  return arrayOut
+  return sortedArray
   }
 }
 

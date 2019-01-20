@@ -18,4 +18,10 @@ describe('Sorting functions', function() {
     assert.equal(Math.min(...result), result[0])
     assert.equal(Math.max(...result), result[result.length - 1])
   });
+
+  it("justSort returns nill array if given junk", function() {
+    let randArray = "hahahahaha";
+    let result = sort.justSort(randArray)
+    assert.equal(0, result.length)
+  });
 });
